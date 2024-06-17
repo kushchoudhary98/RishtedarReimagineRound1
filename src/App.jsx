@@ -1,10 +1,14 @@
+import Features from "./sections/Features"
+import Hero from "./sections/Hero"
+import Navbar from "./sections/Navbar"
 
 function App() {
 
   return (
-    <>
-      <div>This is the initial form.</div>
-    </>
+    <div>
+      <Navbar />
+      <Hero />
+    </div>
   )
 }
 
