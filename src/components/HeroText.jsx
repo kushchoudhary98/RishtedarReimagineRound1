@@ -22,7 +22,7 @@ export default function HeroText() {
     }
 
     return (
-        <div className='mt-[30px] m-3 md:m-8' style={{ fontFamily: "Fredoka" }}>
+        <div className='md:mt-[30px] mx-3 md:m-8' style={{ fontFamily: "Fredoka" }}>
             <motion.span
                 initial={{ backgroundColor: "#ffffff" }}
                 animate={{ backgroundColor: "#fbed28" }}

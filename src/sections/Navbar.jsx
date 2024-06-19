@@ -5,7 +5,7 @@ import hamburger_icon from '../assets/hamburger.svg'
 
 export default function Navbar() {
   return (
-    <nav className='flex items-center ml-5 justify-between'>
+    <nav className='flex items-center justify-between'>
         <div className='flex items-center'>
             <img src={logo} className='w-[55px] md:w-[65px] m-6' />
             <div className='hidden md:flex font-medium text-lg ml-7 gap-10' style={{fontFamily: "Inter"}}>
