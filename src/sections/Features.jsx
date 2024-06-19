@@ -219,7 +219,7 @@ export default function Features(props) {
                         duration: 0.5
                     }}
                     className='absolute flex flex-row justify-around items-center md:items-start md:flex-col w-screen md:w-[28vw] h-[20vh] bottom-0 md:right-0 md:top-1/2'>
-                    <img className="relative flex justify-center items-center w-[100px] md:w-[100px] object-contain bottom-0 left-2 md:left-0" src={infiLogo} />
+                    <img className="relative flex justify-center items-center w-[100px] md:w-[150px] object-contain bottom-0 left-2 md:left-0" src={infiLogo} />
                     <div className='w-1 h-[120px] bg-slate-300' />
                     <div className='relative md:flex hidden mt-5 gap-2 font-fredoka font-medium text-[15px]'>
                         <p className='bg-[#FBED28] p-1 px-5 rounded-full'>breathable</p>
