@@ -129,7 +129,7 @@ export default function Features(props) {
                     transition={{
                         ease: "circInOut",
                         duration: 0.5,
-                        delay: 0.5
+                        delay: 0.2
                     }}
                     className='absolute w-[143px] md:w-[200px] object-cover -right-5 md:left-[25vw] top-[30vh] md:top-[55vh]'
                     src={superG2} />
@@ -168,7 +168,7 @@ export default function Features(props) {
                     transition={{
                         ease: "circInOut",
                         duration: 0.5,
-                        delay: 0.5
+                        delay: 0.2
                     }}
                     className='absolute z-30 w-[280px] md:w-[450px] object-cover -right-8 md:left-[15vw] top-[20vh] md:top-[5vh]'
                     src={squishy2} />
@@ -207,7 +207,7 @@ export default function Features(props) {
                     transition={{
                         ease: "circInOut",
                         duration: 0.5,
-                        delay: 0.5
+                        delay: 0.2
                     }}
                     className='absolute w-[338px] md:w-[700px] h-[195px] md:h-[300px] object-cover -left-20 md:-left-[8vw] top-[20vh] md:top-[45vh]'
                     src={infi2} />
