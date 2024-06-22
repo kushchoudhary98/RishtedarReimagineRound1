@@ -57,13 +57,33 @@ export default function Features(props) {
         }
     })
 
+    const bgColor = useTransform(scrollYProgress, [0.9, 1], ["#f5f5f5", "#ffffff"]);
     const heroBlackOpacity = useTransform(scrollYProgress, [0.33, 0.38], [0, 0.25]);
     const circleOpacity = useTransform(scrollYProgress, [0.38, 0.4], [0, 1]);
     const circleSize = useTransform(scrollYProgress, [0.38, 0.4], [400, 600]);
     const circleSizeMob = useTransform(scrollYProgress, [0.38, 0.4], [250, 350]);
+    const progressBar = useTransform(scrollYProgress, [0.4, 1], ["0%", "100%"]);
+    const progressBarOpacity = useTransform(scrollYProgress, [0.98, 1], [1, 0]);
 
     return (
-        <div className="absolute overflow-hidden md:overflow-visible -top-[10vh] md:top-0 h-screen w-full flex flex-col items-center justify-center" style={(s0) ? { display: "flex" } : { display: "none" }}>
+        <motion.div className="absolute overflow-hidden md:overflow-visible -top-[10vh] md:top-0 h-screen w-full flex flex-col items-center justify-center" style={(s0) ? { display: "flex" } : { display: "none" }}>
+            <motion.div style={{ width: progressBar, opacity: progressBarOpacity }} className='absolute left-0 bottom-[13vh] w-full h-[10px] bg-[#3B3059] z-40' />
+            <motion.div
+                animate={(s1 || s2 || s3) ? { opacity: 1 } : { opacity: 0 }}
+                className='absolute hidden md:flex right-[5vw] -top-[8vh] text-[100px] overflow-hidden font-fredoka w-[150px] h-[100px]  leading-none'>
+                <span>0</span>
+                <motion.p
+                    initial={{ y: 0 }}
+                    animate={s1 ? { y: "0%" } : (s2) ? { y: "-100%" } : { y: "-200%" }}
+                    transition={{
+                        duration: 0.5
+                    }}
+                    className='flex flex-col'>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                </motion.p>
+            </motion.div>
             <motion.div style={{ fontFamily: "Fredoka" }} className="absolute w-screen h-fit -top-[0vh] md:top-[-15vh] left-0 m-5 md:m-10 text-[23px] md:text-[44px]" >
                 <motion.p
                     initial={{ y: 0, opacity: 1 }}
@@ -136,7 +156,7 @@ export default function Features(props) {
 
                 <motion.div
                     initial={{ opacity: 0 }}
-                    animate={s1 ? { opacity: 1, y: props.isMobile ? "0%" : "-130%" } : (s2 || s3) ? { opacity: 0, y: props.isMobile ? "-30%" : "-180%" } : { opacity: 0, y: props.isMobile?"30%":"-80%" }}
+                    animate={s1 ? { opacity: 1, y: props.isMobile ? "0%" : "-130%" } : (s2 || s3) ? { opacity: 0, y: props.isMobile ? "-30%" : "-180%" } : { opacity: 0, y: props.isMobile ? "30%" : "-80%" }}
                     transition={{
                         ease: "circInOut",
                         duration: 0.5
@@ -175,13 +195,13 @@ export default function Features(props) {
 
                 <motion.div
                     initial={{ opacity: 0 }}
-                    animate={s2 ? { opacity: 1, y: props.isMobile ? "0%" : "-150%" } : (s3) ? { opacity: 0, y: props.isMobile ? "-30%" : "-190%" } : { opacity: 0, y: props.isMobile?"30%":"-100%" }}
+                    animate={s2 ? { opacity: 1, y: props.isMobile ? "0%" : "-150%" } : (s3) ? { opacity: 0, y: props.isMobile ? "-30%" : "-190%" } : { opacity: 0, y: props.isMobile ? "30%" : "-100%" }}
                     transition={{
                         ease: "circInOut",
                         duration: 0.5
                     }}
                     className='absolute flex flex-row justify-around items-center md:items-start md:flex-col w-screen md:w-[28vw] h-[20vh] bottom-0 md:right-0 md:top-1/2'>
-                    <img className="relative flex justify-center items-center w-[100px] md:w-[100px] object-contain bottom-0 left-0" src={squishyLogo} />
+                    <img className="relative mix-blend-multiply flex justify-center items-center w-[100px] md:w-[100px] object-contain bottom-0 left-0" src={squishyLogo} />
                     <div className='w-1 h-[120px] bg-slate-300' />
                     <div className='relative md:flex hidden mt-5 gap-2 font-fredoka font-medium text-[15px]'>
                         <p className='bg-[#FBED28] p-1 px-5 rounded-full'>memory foam</p>
@@ -213,7 +233,7 @@ export default function Features(props) {
                     src={infi2} />
                 <motion.div
                     initial={{ opacity: 0 }}
-                    animate={s3 ? { opacity: 1, y: props.isMobile ? "0%" : "-130%" } : (!s2) ? { opacity: 0, y: props.isMobile ? "-30%" : "-180%" } : { opacity: 0, y: props.isMobile?"30%":"-90%" }}
+                    animate={s3 ? { opacity: 1, y: props.isMobile ? "0%" : "-130%" } : (!s2) ? { opacity: 0, y: props.isMobile ? "-30%" : "-180%" } : { opacity: 0, y: props.isMobile ? "30%" : "-90%" }}
                     transition={{
                         ease: "circInOut",
                         duration: 0.5
@@ -229,6 +249,6 @@ export default function Features(props) {
                     <p className='relative hidden md:block md:mt-5 md:bottom-0 md:right-0 font-inter md:text-[20px] md:w-[380px]'>INFI-KNIT TM is our patented 3D knit - a stretchable, and highly durable fabric that our shoe uppers are fashioned from. The breathable material has 360° flexibility and will comfortably accommodate growing feet by stretching upto 3 sizes.</p>
                 </motion.div>
             </section>
-        </div>
+        </motion.div>
     )
 }

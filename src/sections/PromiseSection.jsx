@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import pediatrician from '../assets/products/Paediatrician.png'
 import threeXgrowth from '../assets/products/3xgrowth.png'
@@ -56,8 +56,39 @@ function PromiseSection() {
       price: "2,699"
     }]
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const productWidth = 297; // Width of each product card (including margins)
+  const [visibleProducts, setVisibleProducts] = useState(1); // Number of visible products at a time (adjust as needed)
+
+  const scrollHandlerNext = () => {
+    const maxIndex = products.length - visibleProducts;
+    setCurrentIndex((prevIndex) => (prevIndex < maxIndex ? prevIndex + 1 : 0));
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth >= 1200) {
+        setVisibleProducts(4);
+      } else if (screenWidth >= 992) {
+        setVisibleProducts(3);
+      } else if (screenWidth >= 768) {
+        setVisibleProducts(2);
+      } else {
+        setVisibleProducts(1);
+      }
+    };
+
+    handleResize(); // Initial calculation
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <div className='w-full my-32'>
+    <div className='w-full pt-32 bg-white'>
 
       {/* Our Promise Section */}
       <div className='flex items-start justify-center flex-col'>
@@ -106,7 +137,7 @@ function PromiseSection() {
       </div>
 
       {/* Areeto's Fresh Pick */}
-      <div className='w-full my-5 md:my-10 md:px-[50px] flex flex-col justify-center items-start'>
+      <div className='w-full my-5 md:mt-10 md:px-[50px] flex flex-col justify-center items-start'>
         {/* Text for the FRESH PICK SECTION */}
         <div className='text-[25px] font-fredoka md:text-[40px]'>
           <div className=''><span className='font-semibold'>ARETTO'S</span>
@@ -116,16 +147,19 @@ function PromiseSection() {
 
         {/* Cards Section */}
         <div className='flex w-[84%] h-[500px] overflow-hidden mt-10 justify-start items-center font-fredoka'>
-          {/* <motion.button id='next-btn' className='absolute left-0 ml-10 opacity-60 bg-[#EDECEC] border-[2px] border-[#E3DEDE] p-4 rounded-2xl'>
+          {/* <motion.button id='pre-btn' className='absolute left-0 ml-10 opacity-60 bg-[#EDECEC] border-[2px] border-[#E3DEDE] p-4 rounded-2xl'>
             <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
             </svg>
           </motion.button> */}
           {/* CARD */}
-          <div className='flex gap-7 w-[300vw]'>
+          <motion.div
+            id='products-scroll'
+            className='flex gap-7 w-[300vw] transition-all'
+            animate={{ transform: `translateX(-${currentIndex * productWidth}px)` }}>
             {products.map((product) => {
               return (
-                <div className='md:w-[270px] md:h-[500px] rounded-xl overflow-hidden flex flex-col border-[1px] border-[#EDECEC]'>
+                <div className='md:w-[270px] md:h-[480px] rounded-xl overflow-hidden flex flex-col border-[1px] border-[#EDECEC]'>
                   <div className='h-full w-full flex flex-col justify-between'>
                     <div className='bg-[#f6f6f6] overflow-hidden h-[58%] w-full flex items-center justify-center'>
                       <img src={product.image} />
@@ -141,8 +175,14 @@ function PromiseSection() {
                 </div>
               )
             })}
-          </div>
-          <motion.button id='next-btn' className='absolute left-[85%] opacity-60 bg-[#EDECEC] border-[2px] border-[#E3DEDE] p-4 rounded-2xl'>
+          </motion.div>
+          <motion.button
+            id='next-btn'
+            onClick={scrollHandlerNext}
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.2 }}
+            className='absolute left-[85%] opacity-60 bg-[#EDECEC] border-[2px] border-[#E3DEDE] p-4 rounded-2xl'>
             <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
             </svg>

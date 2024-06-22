@@ -22,7 +22,7 @@ export default function HeroText() {
     }
 
     return (
-        <div className='md:mt-[30px] mx-3 md:m-8' style={{ fontFamily: "Fredoka" }}>
+        <div className='md:mt-[30px] mx-3 md:ml-[4vw]' style={{ fontFamily: "Fredoka" }}>
             <motion.span
                 initial={{ backgroundColor: "#ffffff" }}
                 animate={{ backgroundColor: "#fbed28" }}
@@ -30,7 +30,7 @@ export default function HeroText() {
                     duration: 1.5,
                     ease: "easeOut"
                 }}
-                className='font-medium inline-block text-[4vw] md:text-[23px] bg-[#FBED28] p-[6px] rounded-full px-5 content-center' style={{ transform: "translateY(-15px)" }}>
+                className='font-medium inline-block text-[4vw] md:text-[1.3vw] bg-[#FBED28] p-[6px] rounded-full px-5 content-center' style={{ transform: "translateY(-15px)" }}>
                 <span className='inline-block'>SHOES THAT</span>
                 <span>{" "}</span>
                 <span className='inline-block font-semibold'>GROW</span>
@@ -45,17 +45,17 @@ export default function HeroText() {
                     ease: "circOut"
                 }}
                 className='leading-tight'>
-                <motion.span variants={heroText} transition={{ staggerChildren: 0.05 }} className='inline-block relative overflow-hidden font-medium text-[9.5vw] md:text-[70px] ml-3 md:top-4'>{animateWord("THEY")}</motion.span>
+                <motion.span variants={heroText} transition={{ staggerChildren: 0.05 }} className='inline-block relative overflow-hidden font-medium text-[9.5vw] md:text-[3.4vw] ml-3 md:top-[0.8vw]'>{animateWord("THEY")}</motion.span>
                 <br />
-                <motion.span variants={heroText} transition={{ staggerChildren: 0.05 }} className='inline-block relative -top-1 text-[5.5vw] md:text-[39px] overflow-hidden mb-1'>{animateWord("CAN NOW")}</motion.span>
-                <motion.span variants={heroText} transition={{ staggerChildren: 0.05 }} className='inline-block overflow-hidden font-medium text-[9.5vw] md:text-[70px] mx-[10px] md:mx-[20px]'>{animateWord("KEEP UP")}</motion.span>
-                <motion.span variants={heroText} transition={{ staggerChildren: 0.05 }} className='inline-block relative -top-2 overflow-hidden text-[5.5vw] md:text-[39px] mb-1'>{animateWord("WITH")}</motion.span>
+                <motion.span variants={heroText} transition={{ staggerChildren: 0.05 }} className='inline-block relative -top-1 text-[5.5vw] md:text-[2vw] overflow-hidden mb-1'>{animateWord("CAN NOW")}</motion.span>
+                <motion.span variants={heroText} transition={{ staggerChildren: 0.05 }} className='inline-block overflow-hidden font-medium text-[9.5vw] md:text-[3.4vw] mx-[10px] md:mx-[20px]'>{animateWord("KEEP UP")}</motion.span>
+                <motion.span variants={heroText} transition={{ staggerChildren: 0.05 }} className='inline-block relative -top-2 overflow-hidden text-[5.5vw] md:text-[2vw] mb-1'>{animateWord("WITH")}</motion.span>
                 <br />
-                <motion.span variants={heroText} transition={{ staggerChildren: 0.05 }} className='inline-block overflow-hidden text-[5.5vw] md:text-[39px] mt-2'>{animateWord("YOUR KID'S")}</motion.span>
+                <motion.span variants={heroText} transition={{ staggerChildren: 0.05 }} className='inline-block overflow-hidden text-[5.5vw] md:text-[2vw] mt-2'>{animateWord("YOUR KID'S")}</motion.span>
                 <span>&nbsp;</span>
-                <motion.span variants={heroText} transition={{ staggerChildren: 0.05 }} className='inline-block overflow-hidden text-[5.5vw] md:text-[39px] mt-2'>{animateWord(" EVERY")}</motion.span>
+                <motion.span variants={heroText} transition={{ staggerChildren: 0.05 }} className='inline-block overflow-hidden text-[5.5vw] md:text-[2vw] mt-2'>{animateWord(" EVERY")}</motion.span>
                 <br />
-                <motion.span variants={heroText} transition={{staggerChildren: 0.05}} className='inline-block overflow-hidden font-medium text-[9.5vw] md:text-[70px] ml-[30vw] md:ml-[150px]'>{animateWord("ADVENTURE")}</motion.span>
+                <motion.span variants={heroText} transition={{staggerChildren: 0.05}} className='inline-block overflow-hidden font-medium text-[9.5vw] md:text-[3.4vw] ml-[30vw] md:ml-[10vw]'>{animateWord("ADVENTURE")}</motion.span>
             </motion.span>
             <br />
             <motion.span
@@ -64,7 +64,7 @@ export default function HeroText() {
                 transition={{
                     delay: 2.5
                 }}
-                className='inline-block mt-5 md:mt-16 text-[4vw] md:text-[15px]'
+                className='inline-block mt-5 md:mt-10 text-[4vw] md:text-[15px]'
             >
                 <span>Order now</span>
                 <motion.span

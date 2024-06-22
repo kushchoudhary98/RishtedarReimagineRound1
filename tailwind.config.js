@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       dropShadow: {
-        'hero': '0 21px 16px rgba(0, 0, 0, 0.25)',
+        'hero': '0 0px 13px rgba(0, 0, 0, 0.25)',
         'hero-sub': '0px 4px 10px rgba(0, 0, 0, 0.25)'
       },
       fontFamily: {
