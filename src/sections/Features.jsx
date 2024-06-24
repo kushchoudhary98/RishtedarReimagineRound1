@@ -67,7 +67,7 @@ export default function Features(props) {
 
     return (
         <motion.div className="absolute overflow-hidden md:overflow-visible -top-[10vh] md:top-0 h-screen w-full flex flex-col items-center justify-center" style={(s0) ? { display: "flex" } : { display: "none" }}>
-            <motion.div style={{ width: progressBar, opacity: progressBarOpacity }} className='absolute left-0 bottom-[13vh] w-full h-[10px] bg-[#3B3059] z-40' />
+            <motion.div style={{ width: progressBar, opacity: progressBarOpacity }} className='absolute left-0 md:top-[86vh] top-0 w-full h-[10px] bg-[#3B3059] z-40' />
             <motion.div
                 animate={(s1 || s2 || s3) ? { opacity: 1 } : { opacity: 0 }}
                 className='absolute hidden md:flex right-[5vw] -top-[8vh] text-[100px] overflow-hidden font-fredoka w-[150px] h-[100px]  leading-none'>
@@ -78,7 +78,7 @@ export default function Features(props) {
                     transition={{
                         duration: 0.5
                     }}
-                    className='flex flex-col'>
+                    className='hidden md:flex flex-col'>
                     <span>1</span>
                     <span>2</span>
                     <span>3</span>
@@ -138,7 +138,7 @@ export default function Features(props) {
                     initial={{ opacity: 0 }}
                     animate={s1 ? { opacity: 1, x: 0 } : (s2 || s3) ? { opacity: 0, x: 80 } : { opacity: 0, x: -80 }}
                     transition={{
-                        ease: "circInOut",
+                        ease: "easeInOut",
                         duration: 0.5
                     }}
                     className='absolute w-[300px] md:w-[550px] object-cover left-2 top-[10vh] md:top-[5vh]'
@@ -147,7 +147,7 @@ export default function Features(props) {
                     initial={{ opacity: 0 }}
                     animate={s1 ? { opacity: 1, x: 0 } : (s2 || s3) ? { opacity: 0, x: 80 } : { opacity: 0, x: -80 }}
                     transition={{
-                        ease: "circInOut",
+                        ease: "easeInOut",
                         duration: 0.5,
                         delay: 0.2
                     }}
@@ -177,7 +177,7 @@ export default function Features(props) {
                     initial={{ opacity: 0 }}
                     animate={s2 ? { opacity: 1, x: 0 } : (s3) ? { opacity: 0, x: 80 } : { opacity: 0, x: -80 }}
                     transition={{
-                        ease: "circInOut",
+                        ease: "easeInOut",
                         duration: 0.5
                     }}
                     className='absolute w-[158px] md:w-[200px] object-contain -left-6 md:left-5 top-[10%] md:top-[50vh]'
@@ -186,7 +186,7 @@ export default function Features(props) {
                     initial={{ opacity: 0 }}
                     animate={s2 ? { opacity: 1, x: 0 } : (s3) ? { opacity: 0, x: 80 } : { opacity: 0, x: -80 }}
                     transition={{
-                        ease: "circInOut",
+                        ease: "easeInOut",
                         duration: 0.5,
                         delay: 0.2
                     }}
@@ -216,7 +216,7 @@ export default function Features(props) {
                     initial={{ opacity: 0 }}
                     animate={s3 ? { opacity: 1, x: 0 } : (!s2) ? { opacity: 0, x: 80 } : { opacity: 0, x: -80 }}
                     transition={{
-                        ease: "circInOut",
+                        ease: "easeInOut",
                         duration: 0.5
                     }}
                     className='absolute w-[120px] md:w-[200px] object-cover right-1 md:left-[30vw] top-[10vh] md:top-[5vh]'
@@ -225,7 +225,7 @@ export default function Features(props) {
                     initial={{ opacity: 0 }}
                     animate={s3 ? { opacity: 1, x: 0 } : (!s2) ? { opacity: 0, x: 80 } : { opacity: 0, x: -80 }}
                     transition={{
-                        ease: "circInOut",
+                        ease: "easeInOut",
                         duration: 0.5,
                         delay: 0.2
                     }}

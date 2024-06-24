@@ -57,12 +57,16 @@ function PromiseSection() {
     }]
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const productWidth = 297; // Width of each product card (including margins)
+  const [productWidth, setProductWidth] = useState(297); // Width of each product card (including margins)
   const [visibleProducts, setVisibleProducts] = useState(1); // Number of visible products at a time (adjust as needed)
 
   const scrollHandlerNext = () => {
     const maxIndex = products.length - visibleProducts;
     setCurrentIndex((prevIndex) => (prevIndex < maxIndex ? prevIndex + 1 : 0));
+  };
+
+  const scrollHandlerPrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex == 0 ? 0 : prevIndex - 1));
   };
 
   useEffect(() => {
@@ -76,6 +80,7 @@ function PromiseSection() {
         setVisibleProducts(2);
       } else {
         setVisibleProducts(1);
+        setProductWidth(258);
       }
     };
 
@@ -137,7 +142,7 @@ function PromiseSection() {
       </div>
 
       {/* Areeto's Fresh Pick */}
-      <div className='w-full my-5 md:mt-10 md:px-[50px] flex flex-col justify-center items-start'>
+      <div className='w-full my-5 mb-20 md:mt-10 md:px-[50px] px-5 flex flex-col justify-center items-start'>
         {/* Text for the FRESH PICK SECTION */}
         <div className='text-[25px] font-fredoka md:text-[40px]'>
           <div className=''><span className='font-semibold'>ARETTO'S</span>
@@ -146,47 +151,55 @@ function PromiseSection() {
         </div>
 
         {/* Cards Section */}
-        <div className='flex w-[84%] h-[500px] overflow-hidden mt-10 justify-start items-center font-fredoka'>
-          {/* <motion.button id='pre-btn' className='absolute left-0 ml-10 opacity-60 bg-[#EDECEC] border-[2px] border-[#E3DEDE] p-4 rounded-2xl'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
-            </svg>
-          </motion.button> */}
-          {/* CARD */}
-          <motion.div
-            id='products-scroll'
-            className='flex gap-7 w-[300vw] transition-all'
-            animate={{ transform: `translateX(-${currentIndex * productWidth}px)` }}>
-            {products.map((product) => {
-              return (
-                <div className='md:w-[270px] md:h-[480px] rounded-xl overflow-hidden flex flex-col border-[1px] border-[#EDECEC]'>
-                  <div className='h-full w-full flex flex-col justify-between'>
-                    <div className='bg-[#f6f6f6] overflow-hidden h-[58%] w-full flex items-center justify-center'>
-                      <img src={product.image} />
+        <div className='w-full h-fit flex justify-center'>
+          <div className='flex md:w-[84%] w-[240px] md:h-[500px] h-[400px] overflow-hidden mt-10 ml-2 md:ml-0 justify-start items-center font-fredoka'>
+            <motion.button
+              onClick={scrollHandlerPrev}
+              initial={{ scale: 1 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1.2 }}
+              id='prev-btn'
+              className='absolute left-[3vw] opacity-60 bg-[#EDECEC] border-[2px] border-[#E3DEDE] md:p-4 p-3 rounded-2xl'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+              </svg>
+            </motion.button>
+            {/* CARD */}
+            <motion.div
+              id='products-scroll'
+              className='flex gap-7 md:w-[300vw] w-fit transition-all'
+              animate={{ transform: `translateX(-${currentIndex * productWidth}px)` }}>
+              {products.map((product) => {
+                return (
+                  <div className='md:w-[270px] w-[230px] md:h-[480px] h-[400px] rounded-xl overflow-hidden flex flex-col border-[1px] border-[#EDECEC]'>
+                    <div className='h-full w-full flex flex-col justify-between'>
+                      <div className='bg-[#f6f6f6] overflow-hidden h-[58%] w-full flex items-center justify-center'>
+                        <img className='hover:scale-150 transition-all' src={product.image} />
+                      </div>
+                      <div className='bg-white md:text-[21px] text-[18px] flex flex-col items-start justify-start ml-3'>
+                        <p className='text-[#656565]'>Aretto Leaps Kids Shoes</p>
+                        <p className='font-medium'>{product.name}</p>
+                        <p className='font-medium mt-2'>&#8377; {product.price}</p>
+                      </div>
+                      <button className='bg-[#FBED28] text-[#3B3059] m-4 mb-5 font-medium hidden md:flex md:items-center md:justify-center py-[6px] rounded-lg'>ADD TO CART</button>
+                      <button className='bg-[#FBED28] text-[#3B3059] m-3 mb-4 font-medium flex md:hidden py-1 rounded-xl items-center justify-center w-[90%]'>SHOP NOW</button>
                     </div>
-                    <div className='bg-white text-[21px] flex flex-col items-start justify-start ml-3'>
-                      <p className='text-[#656565]'>Aretto Leaps Kids Shoes</p>
-                      <p className='font-medium'>{product.name}</p>
-                      <p className='font-medium mt-2'>&#8377; {product.price}</p>
-                    </div>
-                    <button className='bg-[#FBED28] text-[#3B3059] m-3 font-medium hidden md:flex md:items-center md:justify-center py-[5px] rounded-lg'>ADD TO CART</button>
-                    <button className='bg-[#FBED28] text-[#3B3059] m-3 font-medium flex md:hidden py-1 rounded-3xl items-center justify-center w-3/4'>Shop Now</button>
                   </div>
-                </div>
-              )
-            })}
-          </motion.div>
-          <motion.button
-            id='next-btn'
-            onClick={scrollHandlerNext}
-            initial={{ scale: 1 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 1.2 }}
-            className='absolute left-[85%] opacity-60 bg-[#EDECEC] border-[2px] border-[#E3DEDE] p-4 rounded-2xl'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-            </svg>
-          </motion.button>
+                )
+              })}
+            </motion.div>
+            <motion.button
+              id='next-btn'
+              onClick={scrollHandlerNext}
+              initial={{ scale: 1 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1.2 }}
+              className='absolute right-[3vw] opacity-60 bg-[#EDECEC] border-[2px] border-[#E3DEDE] md:p-4 p-3 rounded-2xl'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+              </svg>
+            </motion.button>
+          </div>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ const NavFlyout = ({ children, FlyoutContent }) => {
             onClick={()=>{setOpen(!open)}}
             className="relative w-fit h-fit"
         >
-            <button className="relative de">
+            <button className="relative">
                 {children}
                 <span
                     style={{

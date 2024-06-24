@@ -4,6 +4,7 @@ import Navbar from "./sections/Navbar"
 import Testimonial from './sections/Testimonial'
 import PromiseSection from './sections/PromiseSection'
 import Footer from './sections/Footer'
+import MobileTestimonial from './sections/MobileTestimonial'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <PromiseSection />
         <Testimonial />
+        <MobileTestimonial />
         <Footer />
       </div>
     </ReactLenis>
