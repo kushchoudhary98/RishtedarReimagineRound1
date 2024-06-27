@@ -85,10 +85,10 @@ function Footer() {
                         </div>
                     </div>
 
-                    <img src={logo} className='filter invert absolute top-10 right-0 w-[60px] md:hidden'/>
                 </div>
+                <img src={logo} className='filter mt-10 invert w-[60px] md:hidden'/>
 
-                <div className='text-[12px] float-right mt-[50px] md:mt-[130px]'>
+                <div className='text-[12px] float-right mt-10 md:mt-[130px]'>
                     SANOSYZO PVT.LTD.
                 </div>
             </div>

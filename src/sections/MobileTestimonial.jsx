@@ -1,8 +1,4 @@
 import React, { useRef } from 'react';
-import img2 from '../assets/style/2.webp';
-import img3 from '../assets/style/3.webp';
-import img7 from '../assets/style/7.webp';
-import img8 from '../assets/style/8.webp';
 import parent from '../assets/testimonial/1.webp';
 import star from '../assets/star.svg';
 
@@ -34,28 +30,12 @@ function MobileTestimonial() {
     const containerRef = useRef(null);
     const cardRefs = useRef([]);
 
-    const scrollLeft = () => {
-        const cardWidth = cardRefs.current[0].offsetWidth + 10; // Add margin
-        containerRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-    };
-
-    const scrollRight = () => {
-        const cardWidth = cardRefs.current[0].offsetWidth + 10; // Add margin
-        containerRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
-    };
-
     return (
         <div className='w-full h-[800px] bg-[#f5f5f5] font-fredoka flex md:hidden flex-col justify-center items-center'>
             <div className='w-full text-3xl p-8 font-medium mb-5'>
                 WHAT PARENTS HAVE TO SAY...
             </div>
             <div className='relative w-full flex justify-center items-center mb-10'>
-                {/* <button
-                    className='absolute left-0 bg-gray-500 text-white p-2 rounded-full'
-                    onClick={scrollLeft}
-                >
-                    ◀
-                </button> */}
                 <div
                     ref={containerRef}
                     className='flex overflow-x-scroll w-[310px] h-[500px] gap-4 scrollbar-hide'
@@ -88,12 +68,6 @@ function MobileTestimonial() {
                         </div>
                     ))}
                 </div>
-                {/* <button
-                    className='absolute right-0 bg-gray-500 text-white p-2 rounded-full'
-                    onClick={scrollRight}
-                >
-                    ▶
-                </button> */}
             </div>
         </div>
     );
