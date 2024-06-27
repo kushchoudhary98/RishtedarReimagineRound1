@@ -36,12 +36,6 @@ export default function Testimonial() {
         content: "Ibrahim is in love with his Aretto shoes from day one. The vibrant colours and comfort while walking / running make him choose Aretto over his other pairs of shoes. The best part is that he wears them on his own very easily and is very comfortable wearing it throughout the day. He enjoyed his Dubai trip a lot in his favourite pair of Aretto Leaps. Thank you!",
         image: test3,
         name: "Fatema Miyasaheb"
-    }, {
-        key: 4,
-        heading: "10 on 10 shoes for your active kids",
-        content: "The beauty of the shoe for me is how it adapts to the natural foot shape. It doesn’t come with bulky, unnecessary additions like a heel and a toe raise that do nothing but add discomfort to a growing child. Their size chart is easy to understand. Tisya loves her Aretto Leaps! She could walk in them comfortably for long hours.",
-        image: test4,
-        name: "Devashri kulkarni"
     }]
 
     const [y, setY] = useState(0);
@@ -61,7 +55,7 @@ export default function Testimonial() {
     const imgWidth = useTransform(scrollYProgress, [0.4, 0.5], ["70vw", "32vw"]);
     const yscroll = useTransform(scrollYProgress, [0.2, 0.4, 0.45, 1], ["0vh", "-35vh", "-35vh", "-115vh"]);
     const backgroundColor = useTransform(scrollYProgress, [0.4, 0.48], ["#ffffff", "#e5e5e5"]);
-    const testimonialScroll = useTransform(scrollYProgress, [0.52, 1], ["0%", "-50%"]);
+    const testimonialScroll = useTransform(scrollYProgress, [0.52, 1], ["0%", "-30%"]);
 
     return (
         <div ref={ref} className='h-[500vh] hidden md:block'>

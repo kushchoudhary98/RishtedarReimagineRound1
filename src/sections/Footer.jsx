@@ -59,30 +59,30 @@ function Footer() {
                     {/* Payment LOGOs */}
                     <div className='w-full flex flex-col mr-1 mt-2 gap-3'>
                         <div className='mt-10'>
-                            <p className=''>
-                                visa
-                                mastercard
-                                gpay
-                                phonepay
-                            </p>
+                            <div className='flex gap-2'>
+                                <img src='https://wearetto.com/cdn/shop/t/37/assets/Visa-icon.svg?v=94240440364377605701717066438' />
+                                <img src='https://wearetto.com/cdn/shop/t/37/assets/mastercard-icon.svg?v=150996548265926269451717066386' />
+                                <img src='https://wearetto.com/cdn/shop/t/37/assets/g-pay.svg?v=139935103900752204101717066365' />
+                                <img src='https://wearetto.com/cdn/shop/t/37/assets/phone-pay.svg?v=5377371705389911851717066396' />
+                            </div>
                         </div>
-                        <p>
-                            upi
-                            rupay
-                        </p>
+                        <div className='flex gap-2'>
+                            <img src='https://wearetto.com/cdn/shop/t/37/assets/upi.svg?v=57122457873533601141717066437' />
+                            <img src='https://wearetto.com/cdn/shop/t/37/assets/rupay.svg?v=112369234227991967181717066406' />
+                        </div>
                     </div>
 
                     {/* Sales Partners */}
                     <div className='w-full flex flex-col mr-1 mt-7 gap-3'>
-                        <p className=''>
-                            Nykka
-                            AJIO
-                        </p>
-                        <p>
-                            myntra
-                            flipkart
-                            amazon
-                        </p>
+                        <div className='flex'>
+                            <img className='w-[78px]' src='https://wearetto.com/cdn/shop/t/37/assets/Nykaa_svg.png?v=161076393093327966561717066391' />
+                            <img className='w-[78px]' src='https://wearetto.com/cdn/shop/t/37/assets/AJIO-logo-Brandlogos.net.svg?v=33279521735371835261717066331' />
+                        </div>
+                        <div className='flex gap-4'>
+                            <img className='w-[78px]' src='https://wearetto.com/cdn/shop/t/37/assets/myntra-logo.svg?v=34986624081840154861717066388' />
+                            <img className='w-[32px]' src='https://wearetto.com/cdn/shop/t/37/assets/flipkart-icon.svg?v=126580597036804047291717066361' />
+                            <img className='w-[78px]' src='https://wearetto.com/cdn/shop/t/37/assets/Amazon_(company)-Logo.wine.svg?v=173673986260471230201717066334' />
+                        </div>
                     </div>
 
                     <img src={logo} className='filter invert absolute top-10 right-0 w-[60px] md:hidden'/>

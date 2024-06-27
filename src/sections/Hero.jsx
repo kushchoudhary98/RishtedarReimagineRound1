@@ -26,12 +26,12 @@ export default function Hero() {
     const heroBGRotate = useTransform(scrollYProgress, [0.001, 0.1], [0, 45]);
     const heroPicRotate = useTransform(scrollYProgress, [0.1, 0.3], [0, 45]);
     const heroPicOpacity = useTransform(scrollYProgress, [0.3, 0.35], [1, 0]);
-    const heroPicXMob = useTransform(scrollYProgress, [0.1, 0.3], ["0%", "3%"]);
+    const heroPicXMob = useTransform(scrollYProgress, [0.1, 0.3], ["0%", "3.5%"]);
     const heroPicX = useTransform(scrollYProgress, [0.1, 0.3], ["0%", "1%"]);
-    const heroPicYMob = useTransform(scrollYProgress, [0.1, 0.3], ["0%", "50%"]);
+    const heroPicYMob = useTransform(scrollYProgress, [0.1, 0.3], ["0%", "49%"]);
     const heroPicY = useTransform(scrollYProgress, [0.1, 0.3], ["0%", "6%"]);
     const heroPicScale = useTransform(scrollYProgress, [0.1, 0.3], [1, 0.8]);
-    const heroPicScaleMob = useTransform(scrollYProgress, [0.1, 0.3], [1, 0.85]);
+    const heroPicScaleMob = useTransform(scrollYProgress, [0.1, 0.3], [1, 0.75]);
 
     const [isMobile, setIsMobile] = useState(screen.width < 768);
 
