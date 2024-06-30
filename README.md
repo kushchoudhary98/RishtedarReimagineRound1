@@ -10,6 +10,7 @@ Welcome to the reimagined ARETTO website, designed for a modern and engaging use
 
 ## Tech Stack
 
+- **React**: Robust and scalable frontend framework.
 - **Vite**: Next-generation frontend tooling.
 - **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
 - **Framer Motion**: Powerful library for animations and interactions.
@@ -18,8 +19,8 @@ Welcome to the reimagined ARETTO website, designed for a modern and engaging use
 
 1. **Clone the repository**
     ```bash
-    git clone https://github.com/yourusername/aretto-reimagined.git
-    cd aretto-reimagined
+    git clone https://github.com/kushchoudhary98/RishtedarReimagineRound1.git
+    cd RishtedarReimagineRound1
     ```
 
 2. **Install dependencies**
@@ -32,26 +33,11 @@ Welcome to the reimagined ARETTO website, designed for a modern and engaging use
     npm run dev
     ```
 
-## Project Structure
-
-- `src/components`: React components.
-- `src/styles`: Tailwind CSS configurations and custom styles.
-- `src/animations`: Framer Motion animations.
-
-## Screenshots
-
-![Homepage](screenshots/homepage.png)
-![Product Page](screenshots/product-page.png)
-
 ## Rishtedaro ka kunba (Team members)
 
--Abhishek Gupta (@Abhishek14104)
--Kush Choudhary (@kushchoudhary98)
--Anuj Saraswat (@anujs15)
-
-## Contact
-
-For any questions or feedback, feel free to reach out via [email@example.com](mailto:email@example.com).
+- [Abhishek Gupta](https://github.com/Abhishek14104)
+- [Kush Choudhary](https://github.com/kushchoudhary98)
+- [Anuj Saraswat](https://github.com/anujs15)
 
 ---
 
