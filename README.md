@@ -11,7 +11,6 @@ Welcome to the reimagined ARETTO website, designed for a modern and engaging use
 ## Tech Stack
 
 - **Vite**: Next-generation frontend tooling.
-- **React**: Robust and scalable frontend framework.
 - **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
 - **Framer Motion**: Powerful library for animations and interactions.
 
@@ -33,11 +32,6 @@ Welcome to the reimagined ARETTO website, designed for a modern and engaging use
     npm run dev
     ```
 
-4. **Build for production**
-    ```bash
-    npm run build
-    ```
-
 ## Project Structure
 
 - `src/components`: React components.
@@ -49,13 +43,11 @@ Welcome to the reimagined ARETTO website, designed for a modern and engaging use
 ![Homepage](screenshots/homepage.png)
 ![Product Page](screenshots/product-page.png)
 
-## Contributing
+## Rishtedaro ka kunba (Team members)
 
-Contributions are welcome! Please fork this repository and submit pull requests.
-
-## License
-
-This project is licensed under the MIT License.
+-Abhishek Gupta (@Abhishek14104)
+-Kush Choudhary (@kushchoudhary98)
+-Anuj Saraswat (@anujs15)
 
 ## Contact
 
